@@ -24,10 +24,6 @@ export const AuthRoutes: Routes = [
 
 
 
-
-
-
-
   }
 
 

@@ -1,1 +1,36 @@
-<h1>Login </h1>
+<div class="flex flex-column">
+
+  <span class="text-lg mb-5 text-4xl">Login</span>
+
+  <mat-form-field>
+    <mat-label>Usaurio</mat-label>
+    <input type="text" matInput placeholder="Nombre de usuario ">
+  </mat-form-field>
+
+
+
+
+  <mat-form-field>
+    <mat-label> Contraseña </mat-label>
+
+    <input type="password" matInput placeholder="Contraseña">
+
+
+  </mat-form-field>
+
+
+
+
+  <button mat-raised-button color="primary"> Ingresar
+
+    <mat-icon>login</mat-icon>
+  </button>
+
+
+
+
+  <div class="flex justify-content-end mt-5">
+    <a routerLink='/auth/register'> ¿Ya te registraste ? </a>
+  </div>
+
+</div>
