@@ -1,8 +1,7 @@
 import { Routes } from '@angular/router';
-import { AuthRoutes } from './auth/auth.routes';
-import { LayoutAuthComponent } from './auth/layout-page/layout-auth-page.component';
+
 import { NotfoundPagesComponent } from './shared/pages/notfound-pages/notfound-pages.component';
-import { HeroesRoutes } from './heroes/heroes.routes';
+
 
 
 export const routes: Routes = [
@@ -18,7 +17,8 @@ export const routes: Routes = [
       () => import('./heroes/heroes.routes').then(r => r.HeroesRoutes)
   },
   { path: '404', component: NotfoundPagesComponent },
-  { path: '**', redirectTo: '/404', pathMatch: 'full' },
+
+  { path: '**', redirectTo: '/404',   },
 
 
 

@@ -16,6 +16,11 @@ export const HeroesRoutes: Routes = [
             .then(c => c.ListPagesComponent)
       },
       {
+        path: 'add/:id', loadComponent:
+          () => import('./pages/add-pages/add-pages.component')
+            .then(c => c.AddPagesComponent)
+      },
+      {
         path: 'add', loadComponent:
           () => import('./pages/add-pages/add-pages.component')
             .then(c => c.AddPagesComponent)
@@ -26,10 +31,11 @@ export const HeroesRoutes: Routes = [
             .then(c => c.SearchPagesComponent)
       },
       {
-        path: 'hero', loadComponent:
+        path: 'hero/:id', loadComponent:
           () => import('./pages/hero-pages/hero-pages.component')
             .then(c => c.HeroPagesComponent)
       },
+
 
 
 

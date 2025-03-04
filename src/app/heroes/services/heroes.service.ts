@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Hero } from '../interfaces/hero.interface';
 import { env } from '../../../env/env';
-import { Observable, tap } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 
 
 @Injectable({ providedIn: 'root' })
@@ -18,6 +18,16 @@ export class HeroesService {
   // obtiene los heroes de la API
   getHero(): Observable<Hero[]> {
     return this.http.get<Hero[]>(`${this.url}/heroes`);
+  }
+
+  // obtiene un heroe por su id
+  GetHeroById(id: string): Observable<Hero | undefined> {
+    return this.http.get<Hero>(`${this.url}/heroes/${id}`)
+      .pipe(
+        catchError(() => {
+          return of(undefined);
+        })
+      );
   }
 
 }

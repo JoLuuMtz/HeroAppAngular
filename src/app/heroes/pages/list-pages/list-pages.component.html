@@ -2,11 +2,13 @@
 <mat-divider></mat-divider>
 
 
-<div class="grid mb-8">
-  <div *ngFor="let heroes of Hero" class="col-12 sm:col-4 md:col-3 xl:col-2">
-
-    <heroes-card-hero [hero]="heroes"></heroes-card-hero>
-
+<div class="grid mb-8 ">
+  @for ( hero of Hero ; track $index){
+  <div class="col-12 sm:col-4 md:col-3 xl:col-2 lg:col-10">
+    <heroes-card-hero [hero]="hero"></heroes-card-hero>
   </div>
+  }
 
 </div>
+
+<mat-divider></mat-divider>

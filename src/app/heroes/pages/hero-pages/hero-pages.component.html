@@ -1,1 +1,55 @@
-<p>hero-pages works!</p>
+<!-- si heroe es undefinded  no -->
+
+@if(Hero){
+<div class="grid">
+  <mat-card class="col-12 sm:col-6 lg-col-4 ml-auto">
+
+
+    <mat-card-header>
+      <mat-card-title class="flex justify-content-center flex-wrap">
+        <h1 class="text-center">{{ Hero.superhero }} </h1>
+
+
+        <img class="flex align-items-center mb-3" mat-card-image [src]="Hero | heroImage" [alt]="Hero.alt_img"
+          alt="Hero Image">
+
+        <mat-divider class="mt-3"></mat-divider>
+
+      </mat-card-title>
+    </mat-card-header>
+
+
+  </mat-card>
+
+
+  <mat-divider></mat-divider>
+
+  <!-- info -->
+  <mat-card class="col-12 sm:col-6 ">
+    <mat-card-title>
+      <h1 class="text-center"> Hero Information </h1>
+    </mat-card-title>
+    <mat-divider> </mat-divider>
+    <p> <strong> {{Hero.characters }} </strong> is a <strong>{{ Hero.publisher }}</strong> hero.</p>
+    <p> With the name of <strong>{{ Hero.superhero}}.</strong></p>
+    <p> First appearance in <strong>{{ Hero.first_appearance }}</strong> .</p>
+    <button class="justify-items-end"mat-button (click)="goBack()" color="warn"> Volver </button>
+
+
+  </mat-card>
+
+</div>
+
+
+}
+@else {
+
+<div>
+  <mat-grid-list cols="1.2" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+}
