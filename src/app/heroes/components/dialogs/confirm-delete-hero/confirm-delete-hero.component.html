@@ -1,0 +1,12 @@
+
+<mat-dialog-content>
+
+<h3 mat-dialog-title >¿ Seguro ?</h3>
+<p class="text-center "> ¿Esta seguro de querer eliminar a {{data.superhero}} ? </p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="OpcionClick()"> No </button>
+<button mat-button  [mat-dialog-close]="data" cdkFocusInitial > Yes </button>
+</mat-dialog-actions>
+<!-- [mat-dialog-close], manda la data de tipo hero que es lo que espera la data en el dialogRef -->
