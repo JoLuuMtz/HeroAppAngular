@@ -9,6 +9,7 @@ import { ImgPipe } from '../../pipes/img.pipe';
 
 @Component({
   selector: 'heroes-card-hero',
+  standalone: true,
   imports: [MaterialModule, CommonModule, RouterModule, ImgPipe],
   templateUrl: './card-hero.component.html',
   styleUrl: './card-hero.component.css'

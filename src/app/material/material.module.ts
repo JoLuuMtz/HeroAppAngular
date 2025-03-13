@@ -19,9 +19,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
+
 @NgModule({
   exports: [
-    
+    MatSnackBarModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,

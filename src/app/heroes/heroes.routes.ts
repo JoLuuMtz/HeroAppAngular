@@ -1,7 +1,5 @@
 import { LayoutHeroComponent } from './pages/layout/layout-hero.component';
 import { Routes } from '@angular/router';
-import { ListPagesComponent } from './pages/list-pages/list-pages.component';
-import { SearchPagesComponent } from './pages/search-pages/search-pages.component';
 
 
 export const HeroesRoutes: Routes = [

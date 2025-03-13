@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hero } from '../../interfaces/hero.interface';
@@ -16,10 +16,14 @@ import { ImgPipe } from '../../pipes/img.pipe';
 export class HeroPagesComponent implements OnInit {
 
 
-  constructor(private activateRoute: ActivatedRoute,
-    private router: Router,
-    private readonly heroesService: HeroesService
-  ) { }
+  // constructor(private activateRoute: ActivatedRoute,
+  //   private router: Router,
+  //   private readonly heroesService: HeroesService
+  // ) { }
+
+  private activateRoute = inject(ActivatedRoute);
+  private router = inject(Router);
+  private heroesService = inject(HeroesService);
 
   public Hero !: Hero | undefined;
 
@@ -41,7 +45,7 @@ export class HeroPagesComponent implements OnInit {
     });
   }
 
-  // VUELVE A LA PAGINA DEL LA LISTA DE HEROES 
+  // VUELVE A LA PAGINA DEL LA LISTA DE HEROES
   goBack(): void {
     this.router.navigate(['/heroes/list']);
   }

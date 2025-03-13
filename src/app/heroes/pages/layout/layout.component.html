@@ -1,6 +1,6 @@
 <mat-sidenav-container fullscreen>
 
-  <mat-sidenav #sidenav mode="push" [ngStyle]="{'width': '250px'}">
+  <mat-sidenav #sidenav mode="push"  [ngStyle]="{'width': '250px'}">
 
     <mat-toolbar>
 
@@ -27,9 +27,9 @@
   </mat-sidenav>
 
 
-  <mat-toolbar>
+  <mat-toolbar class="-menuBar-" >
 
-    <button mat-icon-button (click)="sidenav.toggle()">
+    <button mat-icon-button (click)="sidenav.toggle()" >
       <mat-icon>menu</mat-icon>
     </button>
 
@@ -37,6 +37,8 @@
     <span class="puntero">Log Out </span>
 
   </mat-toolbar>
+
+
 
 
 

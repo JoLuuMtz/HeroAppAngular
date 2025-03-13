@@ -1,1 +1,48 @@
-<h1>Search </h1>
+<div clas="flex flex-column pt-2 pb-2">
+    <h1 class="text-center mt-2">Buscador de heroes</h1>
+
+
+    <mat-form-field appearance="fill" class="-full-width-" >
+
+        <mat-label>Buscador de heroes</mat-label>
+        <input
+            matInput
+            type="text"
+            [formControl]="searchHeroForm"
+            placeholder="Buscar heroe"
+            (input)="SearchHero()"
+            [matAutocomplete]="auto"
+
+
+        >
+
+        <mat-autocomplete (optionSelected)="isSelected($event)"  #auto="matAutocomplete">
+
+          @for (Heros of Hero; track  Heros.id) {
+
+            <mat-option  [value]="Heros">{{Heros.superhero}}</mat-option>
+
+          }
+          <mat-option value="">
+            @if( Hero.length === 0 && searchHeroForm.value && searchHeroForm.value.length > 0) {
+              No hay resultados para {{ searchHeroForm.value }}
+            }
+          </mat-option>
+        </mat-autocomplete>
+
+
+        <mat-icon matPrefix> search</mat-icon>
+
+
+    </mat-form-field>
+
+@if(!heroSelected){
+  <span color="warn">No hay heroes seleccionados </span>
+}@else {
+  <div  class="flex justify-content-center ">
+    <heroes-card-hero class="w-3" [hero]="heroSelected"></heroes-card-hero>
+  </div>
+}
+
+
+

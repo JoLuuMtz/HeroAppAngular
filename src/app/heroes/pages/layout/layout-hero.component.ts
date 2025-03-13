@@ -13,7 +13,6 @@ import { MaterialModule } from '../../../material/material.module';
 })
 export class LayoutHeroComponent {
 
-
   public sideBarItem = [
     {
       icon: 'add',
@@ -21,7 +20,6 @@ export class LayoutHeroComponent {
       route: './add'
     },
     {
-
       icon: 'person',
       name: 'Heroes',
       route: './list'
@@ -33,6 +31,8 @@ export class LayoutHeroComponent {
     },
 
 
-
   ];
+
+
 }
+

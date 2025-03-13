@@ -1,2 +1,141 @@
-<h1> New </h1> 
+<h1>{{ Operation }} Heroe </h1>
+@if(HeroFormValue.id){
+  <span class="text-lg"> {{ HeroForm.value.superhero }} </span>
+}
+
+<mat-divider class="mt-3"></mat-divider>
+
+<div class="grid">
+
+    <div class="col-12 md:col-4 sm:col-4 lg:col-5 ">
+
+        <mat-card>
+
+            <mat-card-content [formGroup]="HeroForm" (ngSubmit)="saveHero() ">
+                <div class="grid mt-2">
+
+                  <!-- <mat-form-field class="col-12">
+
+                    <mat-label>ID</mat-label>
+                    <input
+                        matInput
+                        placeholder="ID"
+                        required
+                        formControlName="id"
+                    >
+                </mat-form-field> -->
+
+                    <mat-form-field class="col-12">
+                        <mat-label>Nombre del Heroe</mat-label>
+                        <input
+                            matInput
+                            placeholder="Nombre del Heroe"
+                            required
+
+                            formControlName="superhero"
+                        >
+                    </mat-form-field>
+
+
+                    <mat-form-field class="col-12">
+                        <mat-label>Alter ego</mat-label>
+                        <input
+                            matInput
+                            placeholder="Alter ego "
+
+                            formControlName="alter_ego"
+                            required
+                        >
+                    </mat-form-field>
+
+                    <mat-form-field class="col-12 ">
+                        <mat-label>Personaje</mat-label>
+                        <input
+                            matInput
+                            placeholder="Personaje "
+                            formControlName="characters"
+
+                            required
+                        >
+                    </mat-form-field>
+
+                    <mat-form-field class="col-12">
+                        <mat-label>Primera aparición</mat-label>
+                        <input
+                            matInput
+                            placeholder="Primera aparición "
+                            formControlName="first_appearance"
+
+                            required
+                        >
+
+                    </mat-form-field>
+
+                    <mat-form-field class="col-12">
+
+                        <mat-label>Publicador</mat-label>
+                        <mat-select formControlName="publisher" >
+
+                          @for ( publisher  of  publisherOption; track $index) {
+                            <mat-option  [value]="publisher">{{ publisher }}</mat-option>
+
+                          }
+
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-12">
+                      <mat-label>Imagen Alternativa </mat-label>
+
+                      <input
+                          matInput
+                          placeholder="Imagen del heroe"
+                          formControlName="alt_img"
+                          required
+                          type="text"
+                      />
+                    </mat-form-field>
+
+                </div>
+
+                <div class="flex justify-content-between" >
+                  @if(HeroFormValue.id){
+                      <button mat-raised-button color="warn" (click)="deleteHero()" >
+                      <mat-icon>delete</mat-icon>
+                      Borrar
+                    </button>
+                  }
+                  <span></span>
+
+
+
+                    <button mat-flat-button color="primary" (click)="saveHero()"  >
+                      <mat-icon> send </mat-icon>
+                      Guardar
+                    </button>
+
+                </div>
+
+
+            </mat-card-content>
+
+        </mat-card>
+
+
+    </div>
+
+
+  <div class=" col-12 sm:col-6 lg-col-4 mt-3 ">
+      <mat-card>
+
+        @if(HeroFormValue){
+          <img mat-card-image  [src]=" HeroFormValue | heroImage"  [alt]="HeroFormValue.alt_img" alt >
+        }
+
+
+
+      </mat-card>
+    </div>
+
+</div>
 
