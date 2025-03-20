@@ -9,6 +9,7 @@ import { Hero } from '../interfaces/hero.interface';
 
 export class ImgPipe implements PipeTransform {
 
+  // metodo que implementa la interfaz PipeTransform
   transform(value: Hero): string {
 
     // verifica si hay un id y una imagen alternativa
@@ -26,3 +27,4 @@ export class ImgPipe implements PipeTransform {
 
   }
 }
+

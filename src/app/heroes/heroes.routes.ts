@@ -1,3 +1,4 @@
+import { CanMatchGuuard } from '../auth/services/guards/auth.guard';
 import { LayoutHeroComponent } from './pages/layout/layout-hero.component';
 import { Routes } from '@angular/router';
 
@@ -38,6 +39,7 @@ export const HeroesRoutes: Routes = [
 
 
     ],
+
 
   },
 
