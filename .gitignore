@@ -12,6 +12,7 @@
 
 # ENV files
 
+env/
 /env
 
 # Node
